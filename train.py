@@ -1,12 +1,10 @@
 import torch
 import torch.nn as nn
-
-from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
 
 from mlops.model import SimpleModel
-from mlops.utils import model_train, model_save_inf
-
+from mlops.utils import model_save_inf, model_train
 
 if __name__ == "__main__":
     SAVE_PATH = "./models/iris.pt"

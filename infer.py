@@ -1,11 +1,10 @@
 import torch
-from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
 
 from mlops.model import SimpleModel
-from mlops.utils import model_predict, model_load_inf
-from sklearn.metrics import accuracy_score
-
+from mlops.utils import model_load_inf, model_predict
 
 if __name__ == "__main__":
     X, y = load_iris(as_frame=True, return_X_y=True)
