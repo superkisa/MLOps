@@ -27,7 +27,7 @@ def model_train(
     return model, losses
 
 
-def model_predict(model: nn.Module, X_test):
+def model_predict(model: nn.Module, X_test) -> list[int]:
     was_training = False
     if model.training:
         model.eval()
@@ -40,3 +40,11 @@ def model_predict(model: nn.Module, X_test):
     if was_training:
         model.train()
     return preds
+
+
+def model_save_inf(model: nn.Module, path: str) -> None:
+    torch.save(model.state_dict(), path)
+
+
+def model_load_inf(model: nn.Module, path: str):
+    model.load_state_dict(torch.load(path))
